@@ -4,12 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import train.reservation.system.entity.FareEnquiryRequest;
 import train.reservation.system.entity.Train;
-import train.reservation.system.exception.TrainException;
+import train.reservation.system.exception.UnprocessableEntityException;
 import train.reservation.system.repository.TrainRepository;
 
 @Service
@@ -23,7 +22,7 @@ public class TrainService {
 		if (train.isPresent())
 			return train;
 		else
-			throw new TrainException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid train number");
+			throw new UnprocessableEntityException("Invalid train number");
 	}
 
 	public Train addTrain(Train train) {
@@ -39,11 +38,19 @@ public class TrainService {
 	}
 
 	public List<Train> getFare(FareEnquiryRequest request) {
-		List<Train> trainList = trainRepository.getFareForStations(request);
+		List<Train> trainList = trainRepository.getFareForStations(request.getFromStation(), request.getToStation());
 		if (trainList.isEmpty())
-			throw new TrainException(HttpStatus.UNPROCESSABLE_ENTITY,
-					"There are no trains between " + request.getToStation() + " to " + request.getFromStation());
+			throw new UnprocessableEntityException(
+					"There are no trains between " + request.getFromStation() + " to " + request.getToStation());
 		else
 			return trainList;
+	}
+
+	public Train updateTrain(Train train) {
+		Optional<Train> originalTrain = trainRepository.findById(train.getTrainNo());
+		if (originalTrain.isPresent()) {
+			return trainRepository.save(train);
+		} else
+			throw new UnprocessableEntityException("Invalid train number");
 	}
 }

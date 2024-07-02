@@ -14,13 +14,13 @@ public class Train {
 	private Long trainNo;
 
 	@Column(name = "train_name")
-	private String train_name;
+	private String trainName;
 
 	@Column(name = "from_station")
-	private String from_station;
+	private String fromStation;
 
 	@Column(name = "to_station")
-	private String to_station;
+	private String toStation;
 
 	private Integer seats;
 	private Double fare;
@@ -33,28 +33,28 @@ public class Train {
 		this.trainNo = trainNo;
 	}
 
-	public String getTrain_name() {
-		return train_name;
+	public String getTrainName() {
+		return trainName;
 	}
 
-	public void setTrain_name(String train_name) {
-		this.train_name = train_name;
+	public void setTrainName(String trainName) {
+		this.trainName = trainName;
 	}
 
-	public String getFrom_station() {
-		return from_station;
+	public String getFromStation() {
+		return fromStation;
 	}
 
-	public void setFrom_station(String from_station) {
-		this.from_station = from_station;
+	public void setFromStation(String fromStation) {
+		this.fromStation = fromStation;
 	}
 
-	public String getTo_station() {
-		return to_station;
+	public String getToStation() {
+		return toStation;
 	}
 
-	public void setTo_station(String to_station) {
-		this.to_station = to_station;
+	public void setToStation(String toStation) {
+		this.toStation = toStation;
 	}
 
 	public Integer getSeats() {

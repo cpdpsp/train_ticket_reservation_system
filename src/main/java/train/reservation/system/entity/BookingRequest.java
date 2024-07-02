@@ -7,12 +7,12 @@ public class BookingRequest {
 	private String date;
 	private int seats;
 
-	public String getMail_id() {
+	public String getMailId() {
 		return mailId;
 	}
 
-	public void setMail_id(String mail_id) {
-		this.mailId = mail_id;
+	public void setMailId(String mailId) {
+		this.mailId = mailId;
 	}
 
 	public Long getTrainNo() {

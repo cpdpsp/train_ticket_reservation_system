@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,5 +52,11 @@ public class TrainController {
 	ResponseEntity<List<Train>> getFare(@RequestBody FareEnquiryRequest request) {
 		List<Train> trainList = trainService.getFare(request);
 		return new ResponseEntity<>(trainList, HttpStatus.OK);
+	}
+
+	@PutMapping("/updateTrain")
+	ResponseEntity<Train> updateTrain(@RequestBody Train train) {
+		Train updatedTrain = trainService.updateTrain(train);
+		return new ResponseEntity<>(updatedTrain, HttpStatus.OK);
 	}
 }
