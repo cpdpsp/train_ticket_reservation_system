@@ -73,4 +73,19 @@ public class Train {
 		this.fare = fare;
 	}
 
+	public Train(Long trainNo, String trainName, String fromStation, String toStation, Integer seats, Double fare) {
+		super();
+		this.trainNo = trainNo;
+		this.trainName = trainName;
+		this.fromStation = fromStation;
+		this.toStation = toStation;
+		this.seats = seats;
+		this.fare = fare;
+	}
+
+	public Train() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

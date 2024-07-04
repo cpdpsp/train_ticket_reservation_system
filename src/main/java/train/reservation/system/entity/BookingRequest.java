@@ -39,4 +39,17 @@ public class BookingRequest {
 		this.seats = seats;
 	}
 
+	public BookingRequest(String mailId, Long trainNo, String date, int seats) {
+		super();
+		this.mailId = mailId;
+		this.trainNo = trainNo;
+		this.date = date;
+		this.seats = seats;
+	}
+
+	public BookingRequest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

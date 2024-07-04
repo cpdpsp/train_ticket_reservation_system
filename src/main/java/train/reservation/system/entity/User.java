@@ -54,4 +54,17 @@ public class User {
 		this.mailId = mailId;
 	}
 
+	public User(String firstName, String lastName, String password, String mailId) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.mailId = mailId;
+	}
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

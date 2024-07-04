@@ -4,6 +4,17 @@ public class LoginRequest {
 	private String mailId;
 	private String password;
 
+	public LoginRequest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public LoginRequest(String mailId, String password) {
+		super();
+		this.mailId = mailId;
+		this.password = password;
+	}
+
 	public String getMailId() {
 		return mailId;
 	}

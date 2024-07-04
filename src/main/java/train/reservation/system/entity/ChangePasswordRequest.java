@@ -6,6 +6,18 @@ public class ChangePasswordRequest {
 	private String oldPassword;
 	private String mailId;
 
+	public ChangePasswordRequest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public ChangePasswordRequest(String newPassword, String oldPassword, String mailId) {
+		super();
+		this.newPassword = newPassword;
+		this.oldPassword = oldPassword;
+		this.mailId = mailId;
+	}
+
 	public String getNewPassword() {
 		return newPassword;
 	}

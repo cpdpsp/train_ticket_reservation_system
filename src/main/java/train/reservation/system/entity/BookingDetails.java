@@ -103,4 +103,22 @@ public class BookingDetails {
 		this.amount = amount;
 	}
 
+	public BookingDetails(String transId, String mailId, Long trainNo, String date, String fromStation,
+			String toStation, int seats, Double amount) {
+		super();
+		this.transId = transId;
+		this.mailId = mailId;
+		this.trainNo = trainNo;
+		this.date = date;
+		this.fromStation = fromStation;
+		this.toStation = toStation;
+		this.seats = seats;
+		this.amount = amount;
+	}
+
+	public BookingDetails() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }
